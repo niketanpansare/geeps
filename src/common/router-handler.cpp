@@ -221,7 +221,7 @@ void RouterHandler::do_handler(RecvCallback recv_callback) {
 
   while (true) {
     try {
-      zmq::poll(pollitems, 4);
+      zmq::poll(pollitems, 4, -1);
     } catch(...) {
       cerr << "exception in router handler" << endl;
       break;
